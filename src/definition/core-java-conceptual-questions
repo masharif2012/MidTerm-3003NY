@@ -20,6 +20,9 @@ What is difference between path and classpath variables?
 What is the difference between an Interface and Abstract class?
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
 what is Access Specifier?
+A. Access specifier defines accessibility of a particular class, method orgit
+   variable. i.e. public, protected and private.
+
 What is OOP ? Define each feature of java OOP.
 What is Java Package and which package is imported by default?
 What is API? Name list of API that you have used so far.
