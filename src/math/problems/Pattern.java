@@ -1,5 +1,8 @@
 package math.problems;
 
+
+import java.util.Arrays;
+
 public class Pattern {
 
 	public static void main(String[] args) {
@@ -8,8 +11,10 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
+
+
 
 
 	}
-}
+
+	}

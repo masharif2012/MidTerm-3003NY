@@ -173,24 +173,25 @@ Draw a table with time complexity in which it will summarize all the data struct
 A.
 
 Data Structure			Time Complexity - (Average)
-				        Accessing---Inserting---Searching---Removing
-Array			        0(1)			0(n)		0(n)			0(n)
-Stack			        0(n)			0(1)		0(n)			0(1)
-Queue			        0(n)			0(1)		0(n)			0(1)
-Single-Linked List	    0(n)			0(1)		0(n)			0(1)
-Doubly-Linked List	    0(n)			0(1)		0(n)			0(1)
-Skip List			    0(log(n))		0(log(n))	0(log(n))		0(log(n))
-Hash Table		        n/a			    0(1)		0(1)			0(1)
-Binary Search Tree	    0(log(n))		0(log(n))	0(log(n))		0(log(n))
-Cartesian Tree		    n/a			    0(log(n))	0(log(n))		0(log(n))
-B-Tree			        0(log(n))		0(log(n))	0(log(n))		0(log(n))
-Red-Black Tree		    0(log(n))		0(log(n))	0(log(n))		0(log(n))
-Splay Tree		        n/a			    0(log(n))	0(log(n))		0(log(n))
-AVL Tree			    0(log(n))		0(log(n))	0(log(n))		0(log(n))
-KD Tree			        0(log(n))		0(log(n))	0(log(n))		0(log(n))
+				Accessing---Inserting---Searching---Removing
+Array			0(1)			0(n)		0(n)			0(n)
+Stack			0(n)			0(1)		0(n)			0(1)
+Queue			0(n)			0(1)		0(n)			0(1)
+Single-Linked List	0(n)			0(1)		0(n)			0(1)
+Doubly-Linked List	0(n)			0(1)		0(n)			0(1)
+Skip List			0(log(n))		0(log(n))	0(log(n))		0(log(n))
+Hash Table		n/a			0(1)		0(1)			0(1)
+Binary Search Tree	0(log(n))		0(log(n))	0(log(n))		0(log(n))
+Cartesian Tree		n/a			0(log(n))	0(log(n))		0(log(n))
+B-Tree			0(log(n))		0(log(n))	0(log(n))		0(log(n))
+Red-Black Tree		0(log(n))		0(log(n))	0(log(n))		0(log(n))
+Splay Tree		n/a			0(log(n))	0(log(n))		0(log(n))
+AVL Tree			0(log(n))		0(log(n))	0(log(n))		0(log(n))
+KD Tree			0(log(n))		0(log(n))	0(log(n))		0(log(n))
 
 
-End......
 
+
+The End..
 
 
