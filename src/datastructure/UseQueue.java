@@ -17,16 +17,27 @@ public class UseQueue {
 		queue.add("Itaca");
 		queue.add("John");
 		queue.add("Kent");  //tail, last
-		System.out.println("\nFirst element of the queue: "+queue.peek()+"\n"); //Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
-		queue.remove();    //Retrieves and removes the head of this queue.
-		System.out.println("After removing head (by remove method), first element of this queue is: "+queue.peek());
+
+
+
+		// peek from the queue
+		System.out.println(queue.peek());
+		//remove from the queue
+		System.out.println(queue.remove());
+
+		System.out.println(queue.peek());
+		// poll from the queue
+		System.out.println(queue.poll());
+
+		System.out.println(queue.peek());
 
 		System.out.println("\nPrinting queue using for each loop: ");
 		for(String st : queue) {
 			System.out.print(st + " ");
 		}
 		queue.add("Lehman");
-		queue.poll();    //Retrieves and removes the head of this queue, or returns null if this queue is empty.
+
+		queue.poll();
 
 		System.out.println("\n\nPrinting queue After adding and removing one element using Iterator ");
 		Iterator it = queue.iterator();

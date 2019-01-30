@@ -15,7 +15,7 @@ public class CsvReader {
          */
 
         String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster-file-12-23-2018.csv";
-        String line = "";
+        String line = "";                                  //"/src/codelab/status/rosterFile-01-26-2019.csv"
         String cvsSplitBy = ",";
         BufferedReader br = null;
         List<Trainee> roster = new ArrayList<Trainee>();

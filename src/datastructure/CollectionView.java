@@ -13,13 +13,13 @@ public class CollectionView {
          */
 
                 HashMap<Integer, String> map = new HashMap<Integer, String>();
-                map.put(1, "NYC");
-                map.put(2, "LA");
-                map.put(3, "Denver");
-                map.put(4, "Boston");
-                map.put(5, "San Jose");
-                map.put(6, "Seattle");
-
+                map.put(1, "London");
+                map.put(2, "Oxford");
+                map.put(3, "Cambridge");
+                map.put(4, "Brighton");
+                map.put(5, "Liverpool");
+                map.put(6, "Manchester");
+                System.out.println("Here's the Collection view of values(Cities)present in map");
                 for (Map.Entry entry : map.entrySet()) {
                         System.out.println(entry.getKey()+" : "+entry.getValue());
                 }

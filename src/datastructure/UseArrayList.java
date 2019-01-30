@@ -22,6 +22,8 @@ public class UseArrayList {
 		name.add("Delavan");
 		name.add("Erick");
 		name.add("Fahd");
+		name.add("Galileo");
+		name.add("Hannah");
 
 		System.out.println("Retrieving data from ArrayList: " + name);
 		System.out.println("Peek element: " + name.get(2));

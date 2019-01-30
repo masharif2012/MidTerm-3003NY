@@ -1,40 +1,35 @@
 package string.problems;
 
-import java.util.Scanner;
+class Palindrome{
 
+    public static void main(String args[]){
 
-public class Palindrome {
+        String sample = "NAYAN";
+        char[] sampleArray = sample.toCharArray();
+        System.out.println(istPalindrome(sampleArray));
+    }
 
-    public static void main(String[] args) {
-        /*
-          If a String is reversed and it remains unchanged, that is called Palindrome. For example, MOM,DAD,MADAM are
-          Palindrome. So write java code to check if a given String is Palindrome or not.
-         */
-        //Note: Sample = nayan
-
-
-        String original, reverse = ""; // Objects of String class
-        Scanner in = new Scanner(System.in);
-
-        System.out.println("Enter a string to check if it is a palindrome");
-        original = in.nextLine();
-
-        int length = original.length();
-
-        for (int i = length - 1; i >= 0; i--)
-            reverse = reverse + original.charAt(i);
-
-        if (original.equals(reverse))
-            System.out.println("The string is certainly a palindrome.");
-        else
-            System.out.println("The string isn't a palindrome.");
-
-
-
-
-
+    public static boolean istPalindrome(char[] sample){
+        boolean palindrome = false;
+        if(sample.length%2 == 0){
+            for(int i = 0; i < sample.length/2-1; i++){
+                if(sample[i] != sample[sample.length-i-1]){
+                    return false;
+                }else{
+                    palindrome = true;
+                }
+            }
+        }else{
+            for(int i = 0; i < (sample.length-1)/2-1; i++){
+                if(sample[i] != sample[sample.length-i-1]){
+                    return false;
+                }else{
+                    palindrome = true;
+                }
+            }
+        }
+        return palindrome;
     }
 }
 
-
-//   Sample: nayan
+//   Sample: NAYAN

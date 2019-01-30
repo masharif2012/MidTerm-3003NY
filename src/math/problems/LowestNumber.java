@@ -45,5 +45,6 @@ public class LowestNumber {
 			System.out.println(st);
 		}
 	}
-
+	public static class ConnectDB extends ConnectToSqlDB {
+	}
 }

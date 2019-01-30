@@ -1,10 +1,12 @@
 package datastructure;
 
+import databases.ConnectToSqlDB;
+
 import java.util.*;
 
 public class UseMap {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		/*
 		 * Demonstrate how to use Map that includes storing and retrieving elements.
 		 * Add List<String> into a Map. Like, Map<String, List<string>> list = new HashMap<String, List<String>>();
@@ -13,35 +15,109 @@ public class UseMap {
 		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 		 */
 
-		List<String> GeneralStore = new ArrayList<String>();
-		GeneralStore.add("GeneralManager");
-		GeneralStore.add("ShiftSupervisor");
-		GeneralStore.add("SecurityAdmin");
-		GeneralStore.add("SalesAssociated");
-		GeneralStore.add("CustomerCareReptv");
 
-		List<String> SuperMarket = new ArrayList<String>();
-		SuperMarket.add("Manager");
-		SuperMarket.add("ShifManager");
-		SuperMarket.add("Deli-Chief");
-		SuperMarket.add("SalesPerson");
-		SuperMarket.add("CustomerAssistance");
+		// Use of HashMap
+		Map<String, String> state = new HashMap<String, String>();
+		state.put("NY", "New York");
+		state.put("NJ", "New Jersey");
+		state.put("CT", "Connecticut");
 
-		Map<String, List<String>> businessField = new HashMap<String, List<String>>();
-		businessField.put("Macy's", GeneralStore);
-		businessField.put("Food Baazar", SuperMarket);
+		System.out.println(state.get("NY"));
 
-		System.out.println("OutPrint HashMap with For Each Loop :\n");
-		for(Map.Entry<String,List<String>> carrierList : businessField.entrySet()){
-			System.out.println(carrierList.getKey()+" >>> "+carrierList.getValue());
+		for (Map.Entry entry:state.entrySet()){
+			System.out.println(entry.getKey()+" : "+entry.getValue());
 		}
-		System.out.println("\n........................................\n");
-		System.out.println("OutPrint HashMap with Iterator :\n");
-		Iterator<Map.Entry<String,List<String>>> it = businessField.entrySet().iterator();
-		while(it.hasNext()){
-			Map.Entry<String,List<String>> pair = it.next();
-			System.out.println(pair.getKey()+" >>> "+pair.getValue());
+
+
+		// Use of LinkedMapList and arraylist
+		List<String> cityOfUSA = new ArrayList<>();
+		cityOfUSA.add("Los Angeles");
+		cityOfUSA.add("Edison");
+		cityOfUSA.add("Hartford");
+
+		ConnectToSqlDB connect = new ConnectToSqlDB();
+
+		List listCU = cityOfUSA;
+		connect.insertDataFromArrayListToSqlTable(listCU,"cityOfUSA","City");
+		System.out.println("Data showing from database:");
+		List<String> numberu = connect.readDataBase("cityOfUSA","City");
+		for(String st:numberu){
+			System.out.println(st);
 		}
+
+		List<String> cityOfCanada = new ArrayList<>();
+		cityOfCanada.add("Toronto");
+		cityOfCanada.add("Vancouver");
+		cityOfCanada.add("Québec");
+
+		List listCC = cityOfCanada;
+		connect.insertDataFromArrayListToSqlTable(listCC,"cityOfCANDA","City");
+		System.out.println("Data showing from database:");
+		List<String> numberc = connect.readDataBase("cityOfCANDA","City");
+		for(String st:numberc){
+			System.out.println(st);
+		}
+
+		List<String> cityOfUK = new ArrayList<>();
+		cityOfUK.add("London");
+		cityOfUK.add("Oxford");
+		cityOfUK.add("Bristol");
+
+		List listCUK = cityOfUK;
+		connect.insertDataFromArrayListToSqlTable(listCUK,"cityOfUK","City");
+		System.out.println("Data showing from database:");
+		List<String> numberk = connect.readDataBase("cityOfUK","City");
+		for(String st:numberk){
+			System.out.println(st);
+		}
+
+		Map<String, List<String>> list = new LinkedHashMap<>();
+		list.put("USA", cityOfUSA);
+		list.put("Canada", cityOfCanada);
+		list.put("UK", cityOfUK);
+		System.out.println("View from HashMap");
+		for (Map.Entry entry:list.entrySet()){
+			System.out.println(entry.getKey()+" : "+entry.getValue());
+		}
+
+		connect.createTableFromStringToMySql2("use_map", "mapKey", "mapValue");
+		for (Object str : list.keySet()) {
+			for (String str1 : list.get(str)) {
+				List<String> list1 = new ArrayList<String>();
+				list1.add(str.toString()); // adds key
+				list1.add(str1); // adds value
+				// Insert data in the database
+				connect.InsertDataFromArrayListToMySql2(list1, "use_map", "mapKey", "mapValue");
+			}
+		}
+		System.out.println("Data showing from databases");
+		List<String> number = connect.readDataBase1("use_map", "mapKey", "mapValue");
+		for(String st:number){
+			System.out.println(st);
+		}
+
+
+		// Each loop to retrieve data
+		System.out.println("Each loop to retrieve data");
+		for (Object str : list.keySet()) {
+			System.out.println("KeySet:" + str);
+			for (String str1 : list.get(str)) {
+				System.out.println("Value: " + str1);
+			}
+		}
+
+		// using while loop with Iterator to retrieve data
+		System.out.println("using while loop with Iterator to retrieve data");
+		Iterator itr = list.entrySet().iterator();
+
+		Iterator iterator = list.keySet().iterator();
+		while (iterator.hasNext()) {
+			Object values = iterator.next();
+			for (String str1 : list.get(values)) {
+				System.out.println("Value: " + str1);
+			}
+		}
+
 	}
 
 }
